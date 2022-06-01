@@ -1,24 +1,78 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# OOP school library
 
-Things you may want to cover:
+> A blog app built with Ruby on Rails
 
-* Ruby version
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby
+- Ruby on Rails
 
-* Database creation
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+- Have git correctly installed.
+- Have Ruby correctly installed.
 
-* ...
+### Setup
+
+- Open a terminal window where you want to have installed a clone of the repository.
+
+### Install
+
+- Use this command to clone the repo:
+```
+$ git clone git@github.com:helio3197/blog-app.git
+```
+- Install the required dependencies:
+```
+$ bundle install
+```
+### Usage
+
+- Run:
+```
+$ rails s
+```
+
+- Tests:
+```
+$ rspec
+```
+
+- Edit the content as you like.
+
+
+## Authors
+
+👤 **Kenny Salazar**
+
+- GitHub: [@helio3197](https://github.com/helio3197)
+- Twitter: [@kennysalazar31](https://twitter.com/kennysalazar31)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/kenny-salazar-1a1687110)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Thanks to Microverse for the guidelines.
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
