@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# OOP school library
+# Blog App
 
 > A blog app built with Ruby on Rails
 
