@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show', as: 'user'
+  get '/users/:id/posts', to: 'posts#index', as: 'user_posts'
 end
