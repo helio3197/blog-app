@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Users controller tests' do
+describe 'Users controller tests', type: :request do
   context 'users#index' do
     before(:example) { get '/users' }
 

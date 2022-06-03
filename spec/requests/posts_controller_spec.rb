@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Posts controller tests' do
+describe 'Posts controller tests', type: :request do
   context 'posts#index' do
     before(:example) { get '/users/1/posts' }
 
