@@ -5,5 +5,7 @@ class PostsController < ApplicationController
     # @last_comments = Post.last_five_comments()
   end
 
-  def show; end
+  def show
+    @post = User.find(params[:user_id]).posts.find(params[:id])
+  end
 end

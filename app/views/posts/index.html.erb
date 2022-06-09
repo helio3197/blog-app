@@ -4,10 +4,10 @@
   </div>
   <div class="users-posts">
     <% @posts.each do |post| %>
-      <div class="post">
+      <a href=<%= user_post_path(@user, post) %> class="post">
         <%= render post %>
         <%= render partial: 'comments', object: post.last_five_comments %>
-      </div>
+      </a>
     <% end %>
   </div>
 </section>

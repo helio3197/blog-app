@@ -1,34 +1,15 @@
-<div>
-  <p>
-    Post #1 by username
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget justo fringilla, pulvinar sem quis, lacinia mi. Aenean ac turpis id lorem pretium posuere. Cras quis metus ut lectus commodo congue. Duis maximus vel sem et porttitor. Sed posuere dui eu hendrerit vehicula. Cras finibus elit vitae elementum laoreet. Suspendisse tristique nec mi eget consectetur. 
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget justo fringilla, pulvinar sem quis, lacinia mi. Aenean ac turpis id lorem pretium posuere. Cras quis metus ut lectus commodo congue. Duis maximus vel sem et porttitor. Sed posuere dui eu hendrerit vehicula. Cras finibus elit vitae elementum laoreet. Suspendisse tristique nec mi eget consectetur. 
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget justo fringilla, pulvinar sem quis, lacinia mi. Aenean ac turpis id lorem pretium posuere. Cras quis metus ut lectus commodo congue. Duis maximus vel sem et porttitor. Sed posuere dui eu hendrerit vehicula. Cras finibus elit vitae elementum laoreet. Suspendisse tristique nec mi eget consectetur. 
-  </p>
-</div>
-<div>
-  <p>
-    Username: Comment1
-  </p>
-  <p>
-    Username: Comment2
-  </p>
-  <p>
-    Username: Comment3
-  </p>
-  <p>
-    Username: Comment4
-  </p>
-  <p>
-    Username: Comment5
-  </p>
-  <p>
-    Username: Comment6
-  </p>
-</div>
+<section>
+  <div class="posts-list-post post-details">
+    <div class="post-header">
+      <h1><%= @post.title %><span>by <%= @post.author.name %></span></h1>
+      <p>
+          Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>
+          , Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %>
+      </p>
+    </div>  
+    <p class="post-body">
+        <%= @post.text %>
+    </p> 
+  </div>
+  <%= render partial: 'comments', object: @post.comments %>
+</section>
