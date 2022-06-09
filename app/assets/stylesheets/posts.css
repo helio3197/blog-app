@@ -3,3 +3,21 @@
   border: 2px solid;
   margin-bottom: 12px;
 }
+
+.comments-list {
+  padding: 12px 24px;
+  border: 2px solid;
+}
+
+.comments-list .comment {
+  display: flex;
+  gap: 6px;
+}
+
+.comments-list .comment * {
+  margin: 0;
+}
+
+.users-posts .post {
+  margin-bottom: 24px;
+}
