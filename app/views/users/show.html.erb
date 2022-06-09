@@ -1,42 +1,17 @@
-<table>
-  <tr>
-    <td>
-      x
-    </td>
-    <td>
-      <div>
-        <span>
-          User name
-        </span>
-        <span>
-          Number of posts: x
-        </span>
-      </div>
-    </td>
-  </tr>
-</table>
-<div>
-  <p>
-    Bio
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget justo fringilla, pulvinar sem quis, lacinia mi. Aenean ac turpis id lorem pretium posuere. Cras quis metus ut lectus commodo congue. Duis maximus vel sem et porttitor. Sed posuere dui eu hendrerit vehicula. Cras finibus elit vitae elementum laoreet. Suspendisse tristique nec mi eget consectetur. 
-  </p>
-</div>
-<div>
-  <p>
-    Post #1
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget justo fringilla, pulvinar sem quis, lacinia mi. Aenean ac turpis id lorem pretium posuere. Cras quis metus ut lectus commodo congue. Duis maximus vel sem et porttitor. Sed posuere dui eu hendrerit vehicula. Cras finibus elit vitae elementum laoreet. Suspendisse tristique nec mi eget consectetur. 
-  </p>
-</div>
-<div>
-  <p>
-    Post #2
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget justo fringilla, pulvinar sem quis, lacinia mi. Aenean ac turpis id lorem pretium posuere. Cras quis metus ut lectus commodo congue. Duis maximus vel sem et porttitor. Sed posuere dui eu hendrerit vehicula. Cras finibus elit vitae elementum laoreet. Suspendisse tristique nec mi eget consectetur. 
-  </p>
-</div>
-<button>See all posts</button>
+<section>
+  <div class="users-list">
+    <%= render @user %>
+  </div>
+  <div style="padding: 0 24px">
+    <div class="user-bio">
+      <h2>Bio</h2>
+      <p><%= @user.bio %></p>
+    </div>
+  </div>
+  <div class="users-posts">
+    <%= render partial: 'posts/post', collection: @last_posts %>
+  </div>
+  <div style="text-align: center; padding-bottom: 24px">
+    <%= link_to 'See all posts', user_posts_path(@user), class: 'button' %>
+  </div>
+</section>
