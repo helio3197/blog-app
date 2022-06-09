@@ -1,0 +1,53 @@
+.posts-list-post {
+  padding: 12px 24px;
+  border: 2px solid;
+  margin-bottom: 12px;
+}
+
+.posts-list-post > p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.comments-list {
+  padding: 12px 24px;
+  border: 2px solid;
+}
+
+.comments-list .comment {
+  display: flex;
+  gap: 6px;
+}
+
+.post-header * {
+  margin: 0;
+}
+
+.comments-list .comment * {
+  margin: 0;
+}
+
+.users-posts .post {
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+}
+
+.post-details {
+  margin-top: 24px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-header span {
+  font-weight: normal;
+  margin-left: 6px;
+}
+
+.post-header > :last-child {
+  margin-left: auto;
+}

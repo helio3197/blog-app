@@ -1,0 +1,20 @@
+<div class="users-list-row">
+  <div class="users-photo">
+    <img src=<%= user.photo %> alt=<%= "user-#{user.id}" %>>
+  </div>
+  <div class="users-description-wrapper">
+    <a
+      <% if users_index? %>
+        href=<%= user_path(user) %>
+      <% end %>
+      class="users-description-content"
+    >
+      <% if users_index? %>
+        <h2><%= user.name %></h2>
+      <% else %>
+        <h1><%= user.name %></h1>
+      <% end %>
+      <p>Number of posts: <%= user.posts_counter.nil? ? 0 : user.posts_counter %></p>
+    </a>
+  </div>
+</div>

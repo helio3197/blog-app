@@ -1,0 +1,14 @@
+<div class="comments-list">
+  <% if comments.empty? %>
+    <div class="comment">
+      <p>There are no comments yet</p>
+    </div>
+  <% else %>
+    <% comments.each do |comment| %>
+      <div class="comment">
+        <strong><%= comment.author.name %>:</strong>
+        <p><%= comment.text %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
