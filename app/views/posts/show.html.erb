@@ -12,4 +12,5 @@
     </p> 
   </div>
   <%= render partial: 'comments', object: @post.comments %>
+  <%= render 'comment_form', comment: Comment.new %>
 </section>
