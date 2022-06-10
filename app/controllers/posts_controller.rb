@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to user_post_path(current_user, @post), notice: 'Post was successfully created.' }
       else
+        flash.now[:notice] = 'Something went wrong.'
         format.html { render :new, status: :unprocessable_entity }
       end
     end

@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       else
         format.html do
           redirect_back(fallback_location: user_post_path(params[:user_id], params[:post_id]),
-                        status: :unprocessable_entity)
+                        status: :unprocessable_entity, notice: 'Failed to add new comment.')
         end
       end
     end
