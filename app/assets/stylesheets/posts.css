@@ -51,3 +51,7 @@
 .post-header > :last-child {
   margin-left: auto;
 }
+
+.post-body {
+  margin-bottom: 0;
+}
