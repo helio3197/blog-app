@@ -3,13 +3,20 @@
     <div class="post-header">
       <h1><%= @post.title %><span>by <%= @post.author.name %></span></h1>
       <p>
-          Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>
-          , Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %>
+          Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>,
+          Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %>
       </p>
     </div>  
     <p class="post-body">
-        <%= @post.text %>
-    </p> 
+      <%= @post.text %>
+    </p>
+    <div>
+      <% if @like %>
+        <%= button_to 'Dislike', user_post_like_path(@like.author, @like.post, @like), method: :delete %>
+      <% else %>
+        <%= button_to 'Like', user_post_likes_path(@post.author, @post) %>
+      <% end %>
+    </div>
   </div>
   <%= render partial: 'comments', object: @post.comments %>
   <%= render 'comment_form', comment: Comment.new %>

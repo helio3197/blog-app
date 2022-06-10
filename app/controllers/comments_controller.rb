@@ -4,9 +4,15 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_back(fallback_location: user_post_path(params[:user_id], params[:post_id]), notice: 'Comment successfully created.') }
+        format.html do
+          redirect_back(fallback_location: user_post_path(params[:user_id], params[:post_id]),
+                        notice: 'Comment successfully created.')
+        end
       else
-        format.html { redirect_back(fallback_location: user_post_path(params[:user_id], params[:post_id]), status: :unprocessable_entity) }
+        format.html do
+          redirect_back(fallback_location: user_post_path(params[:user_id], params[:post_id]),
+                        status: :unprocessable_entity)
+        end
       end
     end
   end
