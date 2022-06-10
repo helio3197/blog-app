@@ -5,6 +5,10 @@ class Post < ApplicationRecord
   has_many :likes
   scope :update_posts_counter, ->(user, count) { user.update(posts_counter: count) }
   scope :last_five_comments, ->(post) { Comment.where(post:).last(5) }
+  validates :title, presence: true
+  validates :title, length: { maximum: 250 }
+  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
 
   def last_five_comments
     comments.last(5)
