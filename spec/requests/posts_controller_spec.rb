@@ -13,7 +13,7 @@ describe 'Posts controller tests', type: :request do
     end
 
     it 'The response body should contain placeholder text' do
-      expect(response.body).to include('Comment1')
+      expect(response.body).to include('Number of posts')
     end
   end
 
@@ -29,7 +29,7 @@ describe 'Posts controller tests', type: :request do
     end
 
     it 'The response body should contain placeholder text' do
-      expect(response.body).to include('Post #1 by username')
+      expect(response.body).to include('Comments:')
     end
   end
 end
