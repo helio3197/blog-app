@@ -33,12 +33,12 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Should have a #update_posts_counter method' do
-    posts_counter = subject.author.posts_counter
+    posts_count = subject.author.posts_counter
 
     expect do
       subject.author.posts.create(title: 'New Post', text: 'Test', comments_counter: 0, likes_counter: 0)
       subject.save
     end
-      .to change { subject.author.posts_counter }.from(posts_counter).to(posts_counter + 1)
+      .to change { subject.author.posts_counter }.from(posts_count).to(posts_count + 1)
   end
 end
