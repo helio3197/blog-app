@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { described_class.new(author: User.first, title: 'Test', text: 'RSpec', comments_counter: 0, likes_counter: 0) }
+  subject do
+    described_class.new(author: User.first, title: 'Test', text: 'RSpec', comments_counter: 0, likes_counter: 0)
+  end
 
   it 'Should be valid with valid attributes' do
     expect(subject).to be_valid
