@@ -38,7 +38,6 @@ RSpec.describe Post, type: :model do
     posts_count = subject.author.posts_counter
 
     expect do
-      subject.author.posts.create(title: 'New Post', text: 'Test', comments_counter: 0, likes_counter: 0)
       subject.save
     end
       .to change { subject.author.posts_counter }.from(posts_count).to(posts_count + 1)
