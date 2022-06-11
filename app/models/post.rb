@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   after_save :update_posts_counter
   belongs_to :author, class_name: 'User'
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   scope :update_posts_counter, ->(user, count) { user.update(posts_counter: count) }
   scope :last_five_comments, ->(post) { Comment.where(post:).last(5) }
   validates :title, presence: true
