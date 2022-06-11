@@ -1,4 +1,7 @@
 <section>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
   <div class="posts-list-post post-details">
     <div class="post-header">
       <h1><%= @post.title %><span>by <%= @post.author.name %></span></h1>

@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.includes(:posts, posts: :comments).find(params[:user_id])
     @posts = @user.posts
   end
 
   def show
     @post = User.find(params[:user_id]).posts.find(params[:id])
-    @like = Like.find_by(author: @post.author, post: @post)
+    @like = Like.find_by(author: current_user, post: @post)
   end
 
   def new
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to user_post_path(current_user, @post), notice: 'Post was successfully created.' }
       else
+        flash.now[:notice] = 'Something went wrong.'
         format.html { render :new, status: :unprocessable_entity }
       end
     end

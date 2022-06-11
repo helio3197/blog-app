@@ -10,14 +10,14 @@ class LikesController < ApplicationController
       else
         format.html do
           redirect_back(fallback_location: user_post_path(params[:user_id], params[:post_id]),
-                        status: :unprocessable_entity)
+                        status: :unprocessable_entity, notice: 'Something went wrong.')
         end
       end
     end
   end
 
   def destroy
-    @like = Like.find_by(author: params[:user_id], post: params[:post_id])
+    @like = Like.find_by(author: current_user, post: params[:post_id])
 
     @like.destroy
 

@@ -13,7 +13,7 @@ describe 'Users controller tests', type: :request do
     end
 
     it 'The response body should contain placeholder text' do
-      expect(response.body).to include('User name')
+      expect(response.body).to include('Create new post')
     end
   end
 
@@ -29,7 +29,7 @@ describe 'Users controller tests', type: :request do
     end
 
     it 'The response body should contain placeholder text' do
-      expect(response.body).to include('Bio')
+      expect(response.body).to include('See all posts')
     end
   end
 end
