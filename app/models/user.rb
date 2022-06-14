@@ -10,7 +10,15 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }
 
+  after_initialize :set_defaults
+
   def last_three_posts
     posts.last(3)
+  end
+
+  private
+
+  def set_defaults
+    self.posts_counter ||= 0
   end
 end

@@ -1,6 +1,6 @@
 <div class="users-list-row">
   <div class="users-photo">
-    <img src=<%= user.photo %> alt=<%= "user-#{user.id}" %>>
+    <img src=<%= user.photo || 'https://via.placeholder.com/150' %> alt=<%= "user-#{user.id}" %>>
   </div>
   <div class="users-description-wrapper">
     <a
