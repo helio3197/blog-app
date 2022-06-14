@@ -3,6 +3,8 @@
     <%= render @users %>
   </div>
   <div style="text-align: center; padding-bottom: 24px">
-    <%= link_to 'Create new post', new_user_post_path(@user), class: 'button' %>
+    <% unless current_user.nil? %>
+     <%= link_to 'Create new post', new_user_post_path(current_user), class: 'button' %>
+    <% end %>
   </div>
 </section>
