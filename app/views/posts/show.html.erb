@@ -25,5 +25,7 @@
   </div>
   <%= render partial: 'comments', object: @post.comments %>
   <%= render('comment_form', comment: Comment.new) if user_signed_in? %>
-  <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete %>
+  <% if can? :manage, @post %>
+    <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete %>
+  <% end %>
 </section>
