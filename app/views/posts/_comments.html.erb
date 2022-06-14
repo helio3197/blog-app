@@ -8,6 +8,9 @@
       <div class="comment">
         <strong><%= comment.author.name %>:</strong>
         <p><%= comment.text %></p>
+        <% if can? :delete, comment %>
+          <%= button_to 'Delete comment', user_post_comment_path(comment.author, comment.post, comment), method: :delete %>
+        <% end %>
       </div>
     <% end %>
   <% end %>
