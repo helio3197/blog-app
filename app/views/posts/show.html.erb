@@ -14,13 +14,15 @@
       <%= @post.text %>
     </p>
     <div>
-      <% if @like %>
-        <%= button_to 'Dislike', user_post_like_path(@like.author, @like.post, @like), method: :delete %>
-      <% else %>
-        <%= button_to 'Like', user_post_likes_path(@post.author, @post) %>
+      <% if user_signed_in? %>
+        <% if @like %>
+          <%= button_to 'Dislike', user_post_like_path(@like.author, @like.post, @like), method: :delete %>
+        <% else %>
+          <%= button_to 'Like', user_post_likes_path(@post.author, @post) %>
+        <% end %>
       <% end %>
     </div>
   </div>
   <%= render partial: 'comments', object: @post.comments %>
-  <%= render 'comment_form', comment: Comment.new %>
+  <%= render('comment_form', comment: Comment.new) if user_signed_in? %>
 </section>
