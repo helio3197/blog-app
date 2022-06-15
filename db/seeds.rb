@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-user = User.create(id: 1, name: 'Jhon', photo: 'test-pic', bio: 'Test user', posts_counter: 0)
+user = User.create(id: 1, name: 'Jhon', photo: 'test-pic', bio: 'Test user', email: 'test@test.com',  password: 'abc123')
 Post.create(id: 1, author: user, title: 'Post test', text: 'Testing...', comments_counter: 0, likes_counter: 0)
