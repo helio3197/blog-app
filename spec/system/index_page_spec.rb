@@ -16,4 +16,9 @@ RSpec.describe 'Index page', type: :system do
     expect(page).to have_content('Number of posts: 1')
   end
 
+  it "When I click on a user, I am redirected to that user's show page" do
+    visit root_path
+    click_on('Jhon')
+    expect(page).to have_current_path('/users/1')
+  end
 end
