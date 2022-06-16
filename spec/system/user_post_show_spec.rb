@@ -5,6 +5,10 @@ RSpec.describe 'User post index page', type: :system do
     Comment.create(author_id: 1, post_id: 1, text: 'This is the test comment')
   end
 
+  after(:all) do
+    Comment.destroy_all
+  end
+
   it 'I can see the post\'s title.' do
     visit user_post_path(user_id: 1, id: 1)
     expect(page).to have_content('Post test')
