@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Index page', type: :system do
+RSpec.describe 'User show page', type: :system do
   it 'I can see the user\'s profile picture.' do
     visit user_path(id: 1)
     expect(page.find('img')['src']).to have_content 'https://via.placeholder.com/150'
