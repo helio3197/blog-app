@@ -41,6 +41,6 @@ RSpec.describe 'User post index page', type: :system do
 
   it 'I can see the comment each commentor left.' do
     visit user_post_path(user_id: 1, id: 1)
-    expect(page).to have_content('Jhon:')
+    expect(page).to have_content('This is the test comment')
   end
 end
