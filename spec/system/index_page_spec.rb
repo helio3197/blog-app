@@ -5,7 +5,7 @@ RSpec.describe 'Index page', type: :system do
     visit root_path
     expect(page).to have_content('Jhon')
   end
-  
+
   it 'I can see the profile picture for each user.' do
     visit root_path
     expect(page.find('img')['src']).to have_content 'https://via.placeholder.com/150'
