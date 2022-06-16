@@ -35,6 +35,6 @@ RSpec.describe 'Login page', type: :system do
       fill_in 'Password', with: 'abc123'
     end
     find_button('Log in').click
-    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_current_path(root_path)
   end
 end
