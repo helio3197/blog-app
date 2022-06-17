@@ -12,6 +12,14 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api, only: [:id] do
+    resources :users do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
+
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show', as: 'user'
   # get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
