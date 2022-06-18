@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  protect_from_forgery with: :null_session
+  before_action :authenticate_user!
 
   def index
     user = User.includes(:posts, posts: :comments).find(params[:user_id])
@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    user = User.find(3)
+    user = current_user
 
     comment = Comment.create(**comment_params, author: user, post_id: params[:post_id])
 
