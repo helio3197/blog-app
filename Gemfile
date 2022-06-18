@@ -33,6 +33,12 @@ gem 'devise'
 
 gem 'cancancan'
 
+gem 'rack-cors'
+
+gem 'devise-jwt'
+
+gem 'dotenv-rails', groups: %i[development test]
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
