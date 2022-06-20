@@ -1,6 +1,15 @@
 require 'swagger_helper'
 
 describe 'Posts API' do
+  before(:all) do
+    unless User.find_by(id: 2)
+      @user = User.create(id: 2, name: 'Jhon API', bio: 'Test user', email: 'test2@test.com', password: 'abc123',
+                          confirmed_at: Time.now)
+      Post.create(id: 2, author: @user, title: 'Post API test', text: 'Testing... api', comments_counter: 0,
+                  likes_counter: 0)
+    end
+  end
+
   after(:all) do
     Post.last.destroy
     User.last.destroy
@@ -13,10 +22,10 @@ describe 'Posts API' do
       produces 'application/json'
       parameter name: :user_id, in: :path, type: :string
 
-      user = User.create(id: 2, name: 'Jhon API', bio: 'Test user', email: 'test2@test.com', password: 'abc123', confirmed_at: Time.now)
-      Post.create(id: 2, author: user, title: 'Post API test', text: 'Testing... api', comments_counter: 0,
-                  likes_counter: 0)
-      let(:user_id) { user.id }
+      # user = User.create(id: 2, name: 'Jhon API', bio: 'Test user', email: 'test2@test.com', password: 'abc123', confirmed_at: Time.now)
+      # Post.create(id: 2, author: user, title: 'Post API test', text: 'Testing... api', comments_counter: 0,
+      #             likes_counter: 0)
+      let(:user_id) { @user.id }
 
       response '200', 'name found' do
         let(:Authorization) { "Bearer #{JWT_TOKEN}" }

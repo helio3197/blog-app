@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-JWT_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjU1NjgwNzI4LCJleHAiOjE5NzEzMjIwOTYsImp0aSI6ImE3ODg0ODY0LTMyYzItNDI4MS05NjY5LTUzMzQzZDM4NTM5NiJ9.e_hTC-kRGlicsFVenUhcRGiTQYHPtl9d8Iq3TFBw8Aw'
+JWT_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjU1NjgwNzI4LCJleHAiOjE5NzEzMjIwOTYsImp0aSI6ImE3ODg0ODY0LTMyYzItNDI4MS05NjY5LTUzMzQzZDM4NTM5NiJ9.e_hTC-kRGlicsFVenUhcRGiTQYHPtl9d8Iq3TFBw8Aw'.freeze
 
 RSpec.configure do |config|
   # Specify a root folder where Swagger JSON files are generated
